@@ -23,7 +23,7 @@ Los datos fueron sacados de Kaggle, este es el dataset usado: https://www.kaggle
 
 Para transformarlo usamos un mapeo simple de csv a rdf, dejandolo de la siguiente forma:
 
-```json
+```
 @prefix vg: <http://example.org/videogames/> .
 @prefix vgo: <http://example.org/videogames/ontology/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
