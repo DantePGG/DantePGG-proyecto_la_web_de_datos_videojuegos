@@ -181,6 +181,8 @@ ORDER BY DESC(?totalSales)
 
 ### 4\. Top sagas por ventas (Q4)
 
+**Advertencia:** Esta consulta se demoro alrededor de 12 minutos en ejecutarse
+
 **Objetivo:** Obtener el Top 1000 de juegos por ventas globales del dataset local, luego, usando Wikidata revisa una propiedad para ver si pertenence a una saga (P179), agrupandolas con sus ventas cumulativas y el pais en el que se desarollaron.
 
 ```sql
@@ -212,12 +214,12 @@ WHERE {
     ?wdGame wdt:P179 ?wdSaga .
     
     ?wdSaga rdfs:label ?sagaName .
-    FILTER(LANG(?sagaName) = "es" || LANG(?sagaName) = "en")
+    FILTER(LANG(?sagaName) = "en")
     
     OPTIONAL {
       ?wdSaga wdt:P495 ?country .
       ?country rdfs:label ?countryName .
-      FILTER(LANG(?countryName) = "es" || LANG(?countryName) = "en")
+      FILTER(LANG(?countryName) = "en")
     }
   }
 }
